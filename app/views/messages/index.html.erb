@@ -1,0 +1,33 @@
+<div class="panel panel-default">
+    <div class="panel-heading">
+        メッセージ一覧
+    </div>
+    
+    <div class="panel-body">
+        <% @messages.each do |message| %>
+        <span class="label label-info"><%= message.name %></span>
+    
+        <%= message.body %>
+        <br>
+        <% end %>
+    </div>
+</div>
+<%= form_for(Message.new) do |f|%>
+    <% if @message.errors.present? %>
+    <div class="alert alert-denger">
+        <%= alert%>
+        <ul>
+            <% @message.errors.full_messages.each do |full_messages|%>
+            <li>
+                <%= full_messages%>
+            </li>
+            <% end %>
+        </ul>
+    </div>
+<% end %>
+名前:
+<%= f.text_field :name %>
+内容:
+<%= f.text_field :body %>
+<%= f.submit %>
+<% end %>
