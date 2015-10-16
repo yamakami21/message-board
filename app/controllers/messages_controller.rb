@@ -7,9 +7,7 @@ class MessagesController < ApplicationController
     # Messageを全て取得する。
     @messages = Message.all
     @message = Message.new
-    
-    # 描画（省略可）
-    render 'index'
+
   end
   
   def create
