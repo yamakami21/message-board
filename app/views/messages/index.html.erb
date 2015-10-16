@@ -12,22 +12,6 @@
         <% end %>
     </div>
 </div>
-<%= form_for(Message.new) do |f|%>
-    <% if @message.errors.present? %>
-    <div class="alert alert-denger">
-        <%= alert%>
-        <ul>
-            <% @message.errors.full_messages.each do |full_messages|%>
-            <li>
-                <%= full_messages%>
-            </li>
-            <% end %>
-        </ul>
-    </div>
-<% end %>
-名前:
-<%= f.text_field :name %>
-内容:
-<%= f.text_field :body %>
-<%= f.submit %>
-<% end %>
+<% #テンプレートを読み込んでいる %>
+
+<%= render 'form' %>
