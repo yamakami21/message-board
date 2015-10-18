@@ -6,23 +6,32 @@
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
+  
+  <style>
+    .copyright {
+      padding: 20px 0;
+      font-size: 12px;
+      color: #666;
+    }
+
+  </style>
 </head>
 <body>
-  <nav class="navbar">
+  <nav class="navbar navbar-default">
     <div class="container">
       <div class ="navbar-header">
         <a class="navbar-brand" href="#">Message Board</a>
       </div>
-      
-      <% if notice %>
-        <div class="alert alert-info">
-          <%= notice %>
-        </div>
-        <% end %>
     </div>
   </nav>
-
-<%= yield %>
-
+  <div class="container">
+    <% if notice %>
+    <div class="alert alert-info">
+      <%= notice %>
+    </div>
+    <% end %>
+    
+    <%= yield %>
+  </div>
 </body>
 </html>
