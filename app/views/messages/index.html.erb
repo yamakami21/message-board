@@ -6,6 +6,7 @@
     <div class="panel-body">
         <% @messages.each do |message| %>
         <span class="label label-info"><%= message.name %></span>
+        <span class="label label-default"><%= message.age %></span>
         <br>
     	<div class="col-sm-8">
             <%= message.body %>
